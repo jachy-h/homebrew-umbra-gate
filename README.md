@@ -1,12 +1,12 @@
-# homebrew-umbra-gate
+# homebrew-umbragate
 
-Homebrew tap for `umbra-gate`.
+Homebrew tap for `umbragate`.
 
 ## Install
 
 ```bash
 brew tap jachy-h/umbra-gate
-brew install umbra-gate
+brew install umbragate
 ```
 
 ## Development
