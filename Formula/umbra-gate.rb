@@ -4,9 +4,11 @@ class UmbraGate < Formula
   version "0.1.0"
   license "MIT"
 
-  head "https://github.com/jachy-h/umbra-gate.git", branch: "main"
+  head "https://github.com/jachy-h/umbra-gate.git", using: :git, branch: "main"
 
-  depends_on "go" => :build, head: true
+  head do
+    depends_on "go" => :build
+  end
 
   on_macos do
     if Hardware::CPU.arm?
