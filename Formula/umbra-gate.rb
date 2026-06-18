@@ -4,12 +4,6 @@ class UmbraGate < Formula
   version "0.1.0"
   license "MIT"
 
-  head "https://github.com/jachy-h/umbra-gate.git", using: :git, branch: "main"
-
-  head do
-    depends_on "go" => :build
-  end
-
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/jachy-h/umbra-gate/releases/download/v0.1.0/umbra-gate_Darwin_arm64.tar.gz"
@@ -21,12 +15,6 @@ class UmbraGate < Formula
   end
 
   def install
-    if build.head?
-      system "go", "build", *std_go_args(output: bin/"umbra-gate"), "."
-      pkgshare.install "config.example.yaml"
-      return
-    end
-
     bin.install "personal-ai-router" => "umbra-gate"
     pkgshare.install "config.example.yaml"
   end
