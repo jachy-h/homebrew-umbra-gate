@@ -16,7 +16,7 @@ class Umbragate < Formula
 
   def install
     bin.install "umbragate"
-    pkgshare.install "config.example.yaml"
+    pkgshare.install "config.yaml"
   end
 
   service do
@@ -29,15 +29,13 @@ class Umbragate < Formula
   def caveats
     <<~EOS
       Example config installed to:
-        ~/.umbragate/config.example.yaml (created on first launch)
+        ~/.umbragate/config.yaml (created on first launch)
 
       Homebrew install stores config and database in:
         ~/.umbragate/
 
       Quick start:
         umbragate
-        cp ~/.umbragate/config.example.yaml ~/.umbragate/config.yaml
-        export OPENAI_API_KEY=sk-xxxxx
         umbragate
 
       Background mode:
